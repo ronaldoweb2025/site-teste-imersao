@@ -485,36 +485,111 @@
     .hero-points .hero-point:nth-child(3) { transition-delay: 0.28s; }
     .fade-in-left { opacity: 0; transform: translateX(-180px); transition: opacity 1s ease, transform 1s ease; }
     .fade-in-left.is-visible { opacity: 1; transform: translateX(0); }
+    @media (max-width: 1280px) {
+      .section-shell { padding: 96px 0; }
+      .hero-grid { gap: 34px; }
+      .hero-title { font-size: clamp(2.9rem, 5.4vw, 4.8rem); }
+      .hero-copy p { font-size: 1.12rem; max-width: 100%; }
+      .hero-point { padding: 17px 16px 15px; }
+      .hero-point strong { font-size: 1.02rem; }
+      .hero-point span { font-size: 0.92rem; }
+      .module-grid .module-card:last-child { max-width: min(760px, 72%); }
+    }
     @media (max-width: 1180px) {
       .hero-grid, .program-grid { grid-template-columns: 1fr; }
       .hero-copy { max-width: 100%; }
-      .hero-visual { min-height: 520px; order: -1; }
-      .hero-card { left: 12px; bottom: 12px; }
+      .hero-visual { min-height: 500px; order: -1; }
       .faculty-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .differentials-grid, .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .form-panel { position: static; }
+      .availability-box { grid-template-columns: 1fr; }
+      .availability-badge { width: 100%; min-height: 72px; }
+      .program-grid { gap: 22px; }
+      .form-panel, .program-copy, .availability-box { padding: 30px; }
+    }
+    @media (max-width: 980px) {
+      .section-shell { padding: 82px 0; }
+      .site-header .container { gap: 18px; }
+      .hero { padding: 26px 0 72px; }
+      .hero-grid { gap: 28px; }
+      .hero-title { font-size: clamp(2.6rem, 7vw, 4rem); line-height: 0.98; }
+      .hero-copy p { font-size: 1.05rem; }
+      .hero-subline { font-size: 0.94rem; letter-spacing: 0.12em; }
+      .hero-actions { margin-top: 26px; margin-bottom: 28px; }
+      .hero-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .info-grid, .differentials-grid { grid-template-columns: 1fr; gap: 16px; }
+      .module-grid { grid-template-columns: 1fr; }
+      .module-grid .module-card:last-child { grid-column: auto; max-width: none; }
+      .faculty-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .vsl-panel, .module-intro, .module-card, .program-copy, .form-panel, .availability-box, .info-card, .differential-card { border-radius: 24px; }
+      .info-card h3, .module-card h3 { font-size: 1.9rem; }
+      .section-copy { font-size: 1.08rem; }
     }
     @media (max-width: 860px) {
-      .section-shell { padding: 88px 0; }
-      .hero { padding-top: 34px; }
+      .section-shell { padding: 74px 0; }
+      .hero { padding-top: 18px; }
       .hero-points, .faculty-grid, .differentials-grid, .info-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: 1fr; }
       .availability-box { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 440px; }
-      .hero-portrait { max-height: 520px; }
-      .hero-card { position: static; width: 100%; margin-top: 20px; }
+      .hero-visual { min-height: 400px; }
+      .hero-portrait { max-height: 460px; }
       .header-cta { display: none; }
+      .module-toggle { font-size: 0.9rem; padding: 13px 16px; }
+      .timeline-panel, .whatsapp-support { padding-left: 22px; padding-right: 22px; }
+      .faculty-body { min-height: 0; }
+    }
+    @media (max-width: 680px) {
+      .container { padding: 0 20px; }
+      .site-header .container { padding-top: 14px; padding-bottom: 14px; }
+      .brand { font-size: 0.76rem; letter-spacing: 0.13em; }
+      .hero-title { font-size: 2.55rem; }
+      .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 0.98rem; }
+      .hero-points { gap: 12px; }
+      .btn-primary, .btn-secondary { width: 100%; min-height: 54px; }
+      .hero-actions { flex-direction: column; gap: 12px; }
+      .module-card, .program-copy, .form-panel, .availability-box, .info-card, .module-intro, .differential-card, .vsl-panel, .whatsapp-support { padding-left: 20px; padding-right: 20px; }
+      .faculty-grid { grid-template-columns: 1fr; }
+      .faculty-photo { aspect-ratio: 1.02; }
+      .availability-box h3 { font-size: 2.35rem; }
+      .whatsapp-support p { font-size: 1rem; }
+      .whatsapp-support p strong { font-size: 1.14rem; }
     }
     @media (max-width: 560px) {
       .container { padding: 0 18px; }
-      .site-header .container { padding-top: 14px; padding-bottom: 14px; }
-      .brand { font-size: 0.8rem; letter-spacing: 0.14em; }
-      .hero-title { font-size: 2.8rem; }
-      .section-title { font-size: 2.2rem; }
-      .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 1rem; }
-      .module-card, .program-copy, .form-panel, .availability-box, .info-card, .module-intro, .differential-card { padding-left: 22px; padding-right: 22px; }
-      .hero-actions { flex-direction: column; }
-      .btn-primary, .btn-secondary { width: 100%; }
+      .section-shell { padding: 64px 0; }
+      .section-shell::after { left: 18px; right: 18px; }
+      .brand { font-size: 0.72rem; letter-spacing: 0.12em; }
+      .eyebrow { gap: 10px; font-size: 0.73rem; letter-spacing: 0.18em; }
+      .eyebrow::before { width: 28px; }
+      .hero-title { font-size: 2.28rem; }
+      .section-title { font-size: 1.88rem; }
+      .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 0.95rem; }
+      .hero-subline { font-size: 0.84rem; }
+      .hero-point strong { font-size: 0.96rem; }
+      .hero-point span { font-size: 0.88rem; }
+      .info-card h3, .module-card h3, .program-copy h3 { font-size: 1.62rem; }
+      .module-card, .program-copy, .form-panel, .availability-box, .info-card, .module-intro, .differential-card, .vsl-panel, .whatsapp-support { padding-left: 18px; padding-right: 18px; }
+      .module-card { padding-top: 28px; padding-bottom: 24px; }
+      .module-number { width: 62px; height: 62px; margin-bottom: 18px; }
+      .module-number svg { width: 32px; height: 32px; }
+      .info-card .icon { width: 70px; height: 70px; margin-bottom: 22px; }
+      .info-card .icon svg { width: 30px; height: 30px; }
+      .timeline-panel strong { font-size: 1.08rem; letter-spacing: 0.14em; }
+      .timeline-panel p { font-size: 0.98rem; }
+      .field label { font-size: 0.82rem; letter-spacing: 0.07em; }
+      .field input { min-height: 50px; }
+      .submit-btn, .whatsapp-support-btn { min-height: 50px; font-size: 0.82rem; }
+      .availability-box h3 { font-size: 2rem; }
+      .availability-badge { min-height: 64px; font-size: 0.82rem; }
+    }
+    @media (max-width: 400px) {
+      .container { padding: 0 16px; }
+      .hero-title { font-size: 2.02rem; }
+      .section-title { font-size: 1.72rem; }
+      .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 0.92rem; }
+      .hero-point, .info-card, .module-card, .program-copy, .form-panel, .availability-box, .whatsapp-support { border-radius: 20px; }
+      .module-toggle { font-size: 0.82rem; gap: 10px; }
+      .whatsapp-support p strong { font-size: 1.06rem; }
     }
   </style>
 </head>
