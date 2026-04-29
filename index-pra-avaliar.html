@@ -96,8 +96,15 @@
       padding-top: 18px; padding-bottom: 18px;
     }
     .brand {
-      display: inline-flex; align-items: center; min-width: 0;
-      font-size: 1rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft);
+      display: inline-flex; align-items: center; gap: 10px; min-width: 0; flex-shrink: 1;
+      color: #f4efe5; white-space: nowrap;
+    }
+    .brand-logo {
+      display: block; height: 32px; width: auto; flex-shrink: 0;
+    }
+    .brand-text {
+      display: inline-block;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #f4efe5;
     }
     .header-cta {
       display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px;
@@ -194,7 +201,17 @@
       margin-top: 10px; font-size: 1rem; line-height: 1.5; max-width: 30ch; align-self: center;
     }
     .modulos-lista {
-      margin-top: 16px; list-style: none; display: grid; gap: 6px; color: var(--muted); font-size: 0.94rem;
+      margin-top: 16px; list-style: none; display: grid; gap: 10px; color: var(--muted); font-size: 0.94rem;
+      text-align: left;
+    }
+    .modulos-lista li {
+      line-height: 1.45;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .modulos-lista li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
     }
     .formato-aulas {
       margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -248,6 +265,22 @@
     }
     .module-card h3 { font-family: var(--font-display); font-size: 2.05rem; line-height: 1.08; margin-bottom: 16px; color: var(--gold-soft); text-align: center; }
     .module-card p { color: var(--text); font-size: 1.15rem; line-height: 1.65; margin-bottom: 20px; text-align: center; }
+    .module-meta {
+      display: grid; gap: 14px; margin-bottom: 22px; padding: 18px 20px;
+      border-radius: 18px; border: 1px solid rgba(201, 151, 58, 0.14); background: rgba(255, 255, 255, 0.02);
+    }
+    .module-meta-item {
+      display: grid; gap: 4px; text-align: center;
+    }
+    .module-meta-label {
+      color: var(--muted-soft); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .module-meta-value {
+      color: var(--text); font-size: 1rem; font-weight: 600; line-height: 1.45;
+    }
+    .module-meta-value strong {
+      color: var(--gold-soft); font-weight: 700;
+    }
     .module-toggle {
       width: 100%;
       display: flex;
@@ -524,6 +557,9 @@
     @media (max-width: 980px) {
       .section-shell { padding: 82px 0; }
       .site-header .container { gap: 18px; }
+      .brand { gap: 8px; }
+      .brand-logo { height: 30px; }
+      .brand-text { font-size: 0.92rem; letter-spacing: 0.16em; }
       .hero { padding: 26px 0 72px; }
       .hero-grid { gap: 28px; }
       .hero-title { font-size: clamp(2.6rem, 7vw, 4rem); line-height: 0.98; }
@@ -555,7 +591,9 @@
     @media (max-width: 680px) {
       .container { padding: 0 20px; }
       .site-header .container { padding-top: 14px; padding-bottom: 14px; }
-      .brand { font-size: 0.76rem; letter-spacing: 0.13em; }
+      .brand { gap: 8px; }
+      .brand-logo { height: 28px; }
+      .brand-text { font-size: 0.76rem; letter-spacing: 0.13em; }
       .hero-title { font-size: 2.55rem; }
       .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 0.98rem; }
       .hero-points { gap: 12px; }
@@ -598,6 +636,7 @@
     }
     @media (max-width: 400px) {
       .container { padding: 0 16px; }
+      .brand-text { font-size: 0.7rem; letter-spacing: 0.1em; }
       .hero-title { font-size: 2.02rem; }
       .section-title { font-size: 1.72rem; }
       .hero-copy p, .section-copy, .program-copy p, .program-copy li, .availability-box p { font-size: 0.92rem; }
@@ -610,7 +649,10 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="#top" aria-label="Imersão Executiva">Imersão Executiva</a>
+      <a class="brand" href="#top" aria-label="Imersão Executiva">
+        <img class="brand-logo" src="Logo-topo-AIIC-Full-Negativo.png" alt="AIIC">
+        <span class="brand-text">Imersão Executiva</span>
+      </a>
       <a class="header-cta" href="#form-contato">Garantir minha vaga</a>
     </div>
   </header>
@@ -712,11 +754,11 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
             <h3>40 horas</h3>
             <p>Carga horária total em formato EAD/Online.</p>
             <ul class="modulos-lista">
-              <li>Módulo 1 — 8 horas</li>
-              <li>Módulo 2 — 8 horas</li>
-              <li>Módulo 3 — 8 horas</li>
-              <li>Módulo 4 — 8 horas</li>
-              <li>Módulo 5 — 8 horas</li>
+              <li>11–12/06 (Qui/Sex) — Mód. 1 (Stefano)</li>
+              <li>17–18/06 (Qua/Qui) — Mód. 2 (André)</li>
+              <li>25–26/06 (Qui/Sex) — Mód. 3 (Diego)</li>
+              <li>02–03/07 (Qui/Sex) — Mód. 4 (Henrique)</li>
+              <li>09–10/07 (Qui/Sex) — Mód. 5 (Itamir, Henrique e Stefano)</li>
             </ul>
           </article>
 
@@ -777,7 +819,16 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
                 </svg>
               </div>
               <h3>Módulo 1: Fundamentos — Da Política de Relacionamento à Conexão Estratégica</h3>
-              <p>Neste módulo introdutório, abordamos a base necessária para transformar o networking tradicional em um ecossistema de valor real para a instituição. A jornada começa com o diagnóstico da maturidade conectiva e o mapeamento estratégico de stakeholders.</p>
+              <div class="module-meta">
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Data</span>
+                  <span class="module-meta-value"><strong>11 e 12 de junho</strong> (Qui/Sex)</span>
+                </div>
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Palestrante</span>
+                  <span class="module-meta-value"><strong>Stefano</strong></span>
+                </div>
+              </div>
               <button class="module-toggle" type="button" aria-expanded="false">
                 <span class="module-toggle-label">Abrir detalhes do modulo</span>
                 <span class="module-toggle-icon" aria-hidden="true"></span>
@@ -803,7 +854,16 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
                 </svg>
               </div>
               <h3>Módulo 2: Internacionalização, Captação de Recursos e Redes Globais</h3>
-              <p>Transforme a internacionalização em estratégia institucional, geração de oportunidades e captação de recursos. Este módulo apresenta caminhos práticos para ampliar presença global e estruturar projetos com parceiros internacionais.</p>
+              <div class="module-meta">
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Data</span>
+                  <span class="module-meta-value"><strong>17 e 18 de junho</strong> (Qua/Qui)</span>
+                </div>
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Palestrante</span>
+                  <span class="module-meta-value"><strong>André</strong></span>
+                </div>
+              </div>
               <button class="module-toggle" type="button" aria-expanded="false">
                 <span class="module-toggle-label">Abrir detalhes do modulo</span>
                 <span class="module-toggle-icon" aria-hidden="true"></span>
@@ -830,7 +890,16 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
                 </svg>
               </div>
               <h3>Módulo 3: Universidade e Poder Público — Superando a Desconexão</h3>
-              <p>Neste módulo, analisamos os desafios e caminhos para aproximar a produção acadêmica da formulação de políticas públicas, reposicionando a universidade como agente técnico e estratégico na gestão pública.</p>
+              <div class="module-meta">
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Data</span>
+                  <span class="module-meta-value"><strong>25 e 26 de junho</strong> (Qui/Sex)</span>
+                </div>
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Palestrante</span>
+                  <span class="module-meta-value"><strong>Diego</strong></span>
+                </div>
+              </div>
               <button class="module-toggle" type="button" aria-expanded="false">
                 <span class="module-toggle-label">Abrir detalhes do modulo</span>
                 <span class="module-toggle-icon" aria-hidden="true"></span>
@@ -856,7 +925,16 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
                 </svg>
               </div>
               <h3>Módulo 4: Universidade × Empresa — Parcerias com o Setor Produtivo</h3>
-              <p>Posicione sua instituição como parceira estratégica do setor produtivo, gerando inovação, soluções corporativas e valor compartilhado a partir de modelos sólidos de relacionamento universidade-empresa.</p>
+              <div class="module-meta">
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Data</span>
+                  <span class="module-meta-value"><strong>02 e 03 de julho</strong> (Qui/Sex)</span>
+                </div>
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Palestrante</span>
+                  <span class="module-meta-value"><strong>Henrique</strong></span>
+                </div>
+              </div>
               <button class="module-toggle" type="button" aria-expanded="false">
                 <span class="module-toggle-label">Abrir detalhes do modulo</span>
                 <span class="module-toggle-icon" aria-hidden="true"></span>
@@ -882,7 +960,16 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
                 </svg>
               </div>
               <h3>Módulo 5: Masterclass — Construindo um Conselho Empresarial de Alto Impacto</h3>
-              <p>Sessão única de imersão focada na estruturação, engajamento e sustentabilidade de conselhos empresariais vinculados à universidade, com foco em governança e impacto institucional.</p>
+              <div class="module-meta">
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Data</span>
+                  <span class="module-meta-value"><strong>09 e 10 de julho</strong> (Qui/Sex)</span>
+                </div>
+                <div class="module-meta-item">
+                  <span class="module-meta-label">Palestrante</span>
+                  <span class="module-meta-value"><strong>Itamir, Henrique e Stefano</strong></span>
+                </div>
+              </div>
               <button class="module-toggle" type="button" aria-expanded="false">
                 <span class="module-toggle-label">Abrir detalhes do modulo</span>
                 <span class="module-toggle-icon" aria-hidden="true"></span>
