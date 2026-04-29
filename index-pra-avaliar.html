@@ -480,6 +480,11 @@
     .availability-badge {
       display: inline-flex; align-items: center; justify-content: center; min-width: 210px; min-height: 84px; padding: 0 20px; border-radius: 999px;
       background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft)); color: #130e09; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease; cursor: pointer;
+    }
+    .availability-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(141, 101, 37, 0.3);
     }
     .site-footer { padding: 48px 0 60px; background: #040404; }
     .site-footer .container { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
@@ -1073,24 +1078,24 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
     <section class="section-shell contrast-shell">
       <div class="container">
         <span class="eyebrow">Diferenciais</span>
-        <h2 class="section-title">Uma formação com peso Institucional e Utilidade prática</h2>
+        <h2 class="section-title">Mais do que conteúdo: aplicação estratégica na realidade da sua IES</h2>
 
         <div class="differentials-grid">
           <article class="differential-card fade-in">
-            <strong>Metodologia autoral</strong>
-            <p>Baseada em experiência real de gestão universitária e conexão institucional.</p>
+            <strong>Base aplicada à realidade das IES</strong>
+            <p>Conteúdo construído a partir de experiências reais de gestão e conexão institucional.</p>
           </article>
           <article class="differential-card fade-in">
-            <strong>Corpo docente com prática</strong>
-            <p>Profissionais com atuação em reitorado, inovação, relações internacionais e conselhos empresariais.</p>
+            <strong>Quem ensina já executou</strong>
+            <p>Profissionais com atuação direta em reitoria, inovação e relações institucionais.</p>
           </article>
           <article class="differential-card fade-in">
-            <strong>Networking qualificado</strong>
-            <p>Troca de alto nível entre decisores de diferentes instituições e setores.</p>
+            <strong>Conexões que geram oportunidades</strong>
+            <p>Interação direta com decisores e lideranças de diferentes instituições e setores.</p>
           </article>
           <article class="differential-card fade-in">
-            <strong>Foco em resultado</strong>
-            <p>Conteúdo desenhado para gerar clareza estratégica e aplicação prática, não só inspiração.</p>
+            <strong>Aplicação prática, não teoria</strong>
+            <p>Direcionamento claro para decisões estratégicas e implementação real.</p>
           </article>
         </div>
       </div>
@@ -1106,7 +1111,7 @@ Em breve você poderá conhecer todos os detalhes diretamente com o professor.</
             <h3>Vagas Limitadas</h3>
             <p>Apenas 1 representante por IES, com opção de pacote duplo. O processo de entrada é orientado por perfil estratégico e não por volume, preservando o nível da troca, do networking e do posicionamento do programa.</p>
           </div>
-          <div class="availability-badge">Garanta a sua vaga</div>
+          <a class="availability-badge" href="#form-contato">Garanta a sua vaga</a>
         </div>
       </div>
     </section>
