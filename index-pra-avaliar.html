@@ -477,7 +477,10 @@
     .site-footer img { width: min(260px, 64vw); height: auto; filter: brightness(0.96); }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.is-visible { opacity: 1; transform: translateY(0); }
-    .fade-in-left { opacity: 0; transform: translateX(-36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .hero-points .hero-point:nth-child(1) { transition-delay: 0.08s; }
+    .hero-points .hero-point:nth-child(2) { transition-delay: 0.18s; }
+    .hero-points .hero-point:nth-child(3) { transition-delay: 0.28s; }
+    .fade-in-left { opacity: 0; transform: translateX(-96px); transition: opacity 0.9s ease, transform 0.9s ease; }
     .fade-in-left.is-visible { opacity: 1; transform: translateX(0); }
     @media (max-width: 1180px) {
       .hero-grid, .program-grid { grid-template-columns: 1fr; }
@@ -523,27 +526,29 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy fade-in-left">
-          <span class="eyebrow">Conhecimento que gera resultado</span>
-          <h1 class="hero-title">Imersão Executiva</h1>
-          <p>Sua IES no centro das conexões estratégicas: mercado, poder público e redes globais para geração de valor e captação de recursos.</p>
-          <div class="hero-subline">Mercado, poder público e redes globais para geração de valor</div>
+        <div class="hero-copy">
+          <div class="fade-in-left">
+            <span class="eyebrow">Conhecimento que gera resultado</span>
+            <h1 class="hero-title">Imersão Executiva</h1>
+            <p>Sua IES no centro das conexões estratégicas: mercado, poder público e redes globais para geração de valor e captação de recursos.</p>
+            <div class="hero-subline">Mercado, poder público e redes globais para geração de valor</div>
 
-          <div class="hero-actions">
-            <a class="btn-primary" href="#form-contato">Garantir minha vaga</a>
-            <a class="btn-secondary" href="#modulos">Ver módulos</a>
+            <div class="hero-actions">
+              <a class="btn-primary" href="#form-contato">Garantir minha vaga</a>
+              <a class="btn-secondary" href="#modulos">Ver módulos</a>
+            </div>
           </div>
 
           <div class="hero-points">
-            <div class="hero-point">
+            <div class="hero-point fade-in">
               <strong>40 horas totais</strong>
               <span>Cinco módulos de 8 horas em uma jornada executiva de aplicação prática.</span>
             </div>
-            <div class="hero-point">
+            <div class="hero-point fade-in">
               <strong>Público qualificado</strong>
               <span>Foco em líderes que influenciam estratégia, crescimento e posicionamento institucional.</span>
             </div>
-            <div class="hero-point">
+            <div class="hero-point fade-in">
               <strong>Aplicação prática</strong>
               <span>Da visão estratégica ao plano de ação para a realidade concreta da sua IES.</span>
             </div>
