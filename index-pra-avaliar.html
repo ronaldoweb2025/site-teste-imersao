@@ -159,7 +159,7 @@
       background: radial-gradient(circle, rgba(201, 151, 58, 0.35), transparent 68%); filter: blur(24px);
     }
     .hero-portrait { position: relative; max-height: 700px; width: auto; object-fit: contain; clip-path: inset(0 0 2px 0); filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.44)); }
-    .vsl-shell { padding: 8px 0 0; }
+    .vsl-shell { padding: 8px 0 100px; }
     .vsl-panel {
       padding: 30px; border-radius: 28px; border: 1px solid rgba(201, 151, 58, 0.18);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
@@ -172,6 +172,7 @@
       aspect-ratio: 16 / 9; display: grid; place-items: center;
     }
     .vsl-frame iframe { width: 100%; height: 100%; border: 0; }
+    .vsl-actions { display: flex; justify-content: center; margin-top: 26px; }
     .vsl-placeholder { text-align: center; padding: 24px; }
     .vsl-placeholder strong {
       display: block; color: var(--gold-soft); font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase;
@@ -388,6 +389,43 @@
       width: 30%;
       font-weight: 700;
     }
+    .price-shell {
+      background:
+        radial-gradient(circle at 18% 8%, rgba(201, 151, 58, 0.14), transparent 30%),
+        radial-gradient(circle at 82% 88%, rgba(255, 255, 255, 0.05), transparent 28%),
+        linear-gradient(180deg, #060606, #0f0c09);
+    }
+    .price-box {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.62fr); gap: 34px; align-items: center;
+      padding: 42px; margin-top: 42px; border-radius: 30px; border: 1px solid var(--card-border);
+      background: linear-gradient(135deg, rgba(201, 151, 58, 0.12), rgba(255, 255, 255, 0.025));
+      box-shadow: var(--shadow);
+    }
+    .price-copy h3 {
+      font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 4.1rem); line-height: 0.96; margin-bottom: 18px;
+      color: var(--gold-soft);
+    }
+    .price-copy p { color: var(--muted); font-size: 1.18rem; max-width: 620px; }
+    .price-benefits { list-style: none; display: grid; gap: 12px; margin-top: 28px; }
+    .price-benefits li {
+      position: relative; padding-left: 24px; color: #eee5d7; font-size: 1.04rem; line-height: 1.45;
+    }
+    .price-benefits li::before {
+      content: ""; position: absolute; left: 0; top: 0.66em; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold-soft); box-shadow: 0 0 0 6px rgba(201, 151, 58, 0.12);
+    }
+    .price-card {
+      display: grid; gap: 18px; justify-items: center; text-align: center; padding: 34px 28px; border-radius: 26px;
+      border: 1px solid rgba(201, 151, 58, 0.24);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+    }
+    .price-label {
+      color: var(--muted-soft); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .price-value {
+      font-family: var(--font-display); color: var(--gold-soft); font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 0.92;
+    }
+    .price-card .btn-primary { width: 100%; }
     .program-shell { background: radial-gradient(circle at 16% 12%, rgba(201, 151, 58, 0.08), transparent 28%), linear-gradient(180deg, #120f0c, #0a0908); }
     .program-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr); gap: 26px; align-items: start; margin-top: 44px; }
     .program-copy {
@@ -559,6 +597,7 @@
       .hero-visual { min-height: 500px; order: -1; }
       .faculty-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .differentials-grid, .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .price-box { grid-template-columns: 1fr; }
       .form-panel { position: static; }
       .availability-box { grid-template-columns: 1fr; }
       .availability-badge { width: 100%; min-height: 72px; }
@@ -585,6 +624,7 @@
       .vsl-panel, .module-intro, .module-card, .program-copy, .form-panel, .availability-box, .info-card, .differential-card { border-radius: 24px; }
       .info-card h3, .module-card h3 { font-size: 1.9rem; }
       .section-copy { font-size: 1.08rem; }
+      .price-box { padding: 34px; }
     }
     @media (max-width: 860px) {
       .section-shell { padding: 74px 0; }
@@ -611,6 +651,7 @@
       .btn-primary, .btn-secondary { width: 100%; min-height: 54px; }
       .hero-actions { flex-direction: column; gap: 12px; }
       .module-card, .program-copy, .form-panel, .availability-box, .info-card, .module-intro, .differential-card, .vsl-panel, .whatsapp-support { padding-left: 20px; padding-right: 20px; }
+      .price-box { padding-left: 24px; padding-right: 24px; }
       .faculty-grid { grid-template-columns: 1fr; }
       .faculty-photo { aspect-ratio: 1.02; }
       .availability-box h3 { font-size: 2.35rem; }
@@ -632,6 +673,8 @@
       .hero-point span { font-size: 0.88rem; }
       .info-card h3, .module-card h3, .program-copy h3 { font-size: 1.62rem; }
       .module-card, .program-copy, .form-panel, .availability-box, .info-card, .module-intro, .differential-card, .vsl-panel, .whatsapp-support { padding-left: 18px; padding-right: 18px; }
+      .price-box { padding: 28px 18px; border-radius: 24px; }
+      .price-card { padding: 28px 18px; border-radius: 22px; }
       .module-card { padding-top: 28px; padding-bottom: 24px; }
       .module-number { width: 62px; height: 62px; margin-bottom: 18px; }
       .module-number svg { width: 32px; height: 32px; }
@@ -747,11 +790,14 @@
               allowfullscreen>
             </iframe>
           </div>
+          <div class="vsl-actions">
+            <a class="btn-primary" href="#formacao-executiva">Garantir minha vaga</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-shell info-band">
+    <section id="formacao-executiva" class="section-shell info-band">
       <div class="container">
         <span class="eyebrow">Informações principais</span>
         <h2 class="section-title">Uma Formação Executiva para Líderes Universitários</h2>
@@ -1002,6 +1048,32 @@
       </div>
     </section>
 
+    <section class="section-shell price-shell">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2 class="section-title">Participação na Imersão Executiva</h2>
+
+        <div class="price-box fade-in">
+          <div class="price-copy">
+            <h3>A partir de R$ 8.500,00</h3>
+            <p>Vagas limitadas para líderes universitários</p>
+            <ul class="price-benefits">
+              <li>40 horas executivas</li>
+              <li>Acesso direto aos especialistas</li>
+              <li>Conexões estratégicas</li>
+              <li>Aplicação prática na realidade da IES</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <span class="price-label">Condição de participação</span>
+            <div class="price-value">R$ 8.500,00</div>
+            <a class="btn-primary" href="#form-contato">Garantir minha vaga</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-shell section-dark faculty-shell">
       <div class="container">
         <span class="eyebrow">Quem vai te guiar</span>
@@ -1203,15 +1275,15 @@
 
     <section class="section-shell availability-shell">
       <div class="container">
-        <span class="eyebrow">Posicionamento premium</span>
-        <h2 class="section-title">Entrada Orientada por Perfil Estratégico</h2>
+        <span class="eyebrow">Última chamada</span>
+        <h2 class="section-title">Garanta sua Participação na Imersão</h2>
 
         <div class="availability-box fade-in">
           <div>
-            <h3>Vagas Limitadas</h3>
-            <p>Apenas 1 representante por IES, com opção de pacote duplo. O processo de entrada é orientado por perfil estratégico e não por volume, preservando o nível da troca, do networking e do posicionamento do programa.</p>
+            <h3>A partir de R$ 8.500,00</h3>
+            <p>Vagas limitadas para líderes universitários que desejam transformar conexões institucionais em parcerias, projetos e oportunidades reais para sua IES.</p>
           </div>
-          <a class="availability-badge" href="#form-contato">Garanta a sua vaga</a>
+          <a class="availability-badge" href="#form-contato">Garantir minha vaga</a>
         </div>
       </div>
     </section>
