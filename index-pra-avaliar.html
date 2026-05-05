@@ -282,6 +282,15 @@
     .module-meta-value strong {
       color: var(--gold-soft); font-weight: 700;
     }
+    .module-speaker-link {
+      color: var(--gold-soft); text-decoration: none; cursor: pointer;
+      text-underline-offset: 4px; transition: color 0.2s ease, text-shadow 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    .module-speaker-link:hover,
+    .module-speaker-link:focus-visible {
+      color: #f0d48a; text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(240, 212, 138, 0.62);
+      text-shadow: 0 0 14px rgba(201, 151, 58, 0.32);
+    }
     .module-toggle {
       width: 100%;
       display: flex;
@@ -478,6 +487,7 @@
     }
     .faculty-card {
       height: 100%; display: flex; flex-direction: column;
+      scroll-margin-top: 120px;
       border-radius: 26px; overflow: hidden; border: 1px solid var(--card-border);
       background: linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(3, 3, 3, 0.98)); box-shadow: var(--shadow); transition: transform 0.25s ease, border-color 0.25s ease;
     }
@@ -829,7 +839,7 @@
                 </div>
                 <div class="module-meta-item">
                   <span class="module-meta-label">Palestrante</span>
-                  <span class="module-meta-value"><strong>Stefano</strong></span>
+                  <span class="module-meta-value"><strong><a class="module-speaker-link" href="#docente-stefano">Stefano</a></strong></span>
                 </div>
               </div>
               <button class="module-toggle" type="button" aria-expanded="false">
@@ -864,7 +874,7 @@
                 </div>
                 <div class="module-meta-item">
                   <span class="module-meta-label">Palestrante</span>
-                  <span class="module-meta-value"><strong>André</strong></span>
+                  <span class="module-meta-value"><strong><a class="module-speaker-link" href="#docente-andre">André</a></strong></span>
                 </div>
               </div>
               <button class="module-toggle" type="button" aria-expanded="false">
@@ -900,7 +910,7 @@
                 </div>
                 <div class="module-meta-item">
                   <span class="module-meta-label">Palestrante</span>
-                  <span class="module-meta-value"><strong>Diego</strong></span>
+                  <span class="module-meta-value"><strong><a class="module-speaker-link" href="#docente-diego">Diego</a></strong></span>
                 </div>
               </div>
               <button class="module-toggle" type="button" aria-expanded="false">
@@ -935,7 +945,7 @@
                 </div>
                 <div class="module-meta-item">
                   <span class="module-meta-label">Palestrante</span>
-                  <span class="module-meta-value"><strong>Henrique</strong></span>
+                  <span class="module-meta-value"><strong><a class="module-speaker-link" href="#docente-henrique">Henrique</a></strong></span>
                 </div>
               </div>
               <button class="module-toggle" type="button" aria-expanded="false">
@@ -970,7 +980,7 @@
                 </div>
                 <div class="module-meta-item">
                   <span class="module-meta-label">Palestrante</span>
-                  <span class="module-meta-value"><strong>Itamir, Henrique e Stefano</strong></span>
+                  <span class="module-meta-value"><strong><a class="module-speaker-link" href="#docente-itamir">Itamir</a>, <a class="module-speaker-link" href="#docente-henrique">Henrique</a> e <a class="module-speaker-link" href="#docente-stefano">Stefano</a></strong></span>
                 </div>
               </div>
               <button class="module-toggle" type="button" aria-expanded="false">
@@ -998,7 +1008,7 @@
         <h2 class="section-title">Conheça o Corpo Docente</h2>
 
         <div class="faculty-grid">
-          <article class="faculty-card fade-in">
+          <article id="docente-itamir" class="faculty-card fade-in">
             <div class="faculty-photo">
               <img src="Itamir-Junior.jpg" alt="Itamir Junior">
               <a href="https://www.linkedin.com/in/itamir-junior-13a1078b/" target="_blank" rel="noopener" class="faculty-social-link" aria-label="LinkedIn de Itamir Junior">
@@ -1014,7 +1024,7 @@
             </div>
           </article>
 
-          <article class="faculty-card fade-in">
+          <article id="docente-diego" class="faculty-card fade-in">
             <div class="faculty-photo">
               <img src="Prof.-Dr.-Diego-Alexandre.jpg" alt="Prof. Dr. Diego Alexandre">
               <a href="https://www.linkedin.com/in/odiegoalexandre/" target="_blank" rel="noopener" class="faculty-social-link" aria-label="LinkedIn de Diego Alexandre">
@@ -1030,7 +1040,7 @@
             </div>
           </article>
 
-          <article class="faculty-card fade-in">
+          <article id="docente-andre" class="faculty-card fade-in">
             <div class="faculty-photo">
               <img src="Andre-Scaranti.jpg" alt="André Scaranti">
               <a href="https://www.linkedin.com/in/andr%C3%A9-scaranti-9b1b3313/" target="_blank" rel="noopener" class="faculty-social-link" aria-label="LinkedIn de André Scaranti">
@@ -1046,7 +1056,7 @@
             </div>
           </article>
 
-          <article class="faculty-card fade-in">
+          <article id="docente-henrique" class="faculty-card fade-in">
             <div class="faculty-photo">
               <img src="Henrique-Touguinha.jpg" alt="Henrique Touguinha">
               <a href="https://www.linkedin.com/in/henrique-touguinha-a19a04a2/" target="_blank" rel="noopener" class="faculty-social-link" aria-label="LinkedIn de Henrique Touguinha">
@@ -1062,7 +1072,7 @@
             </div>
           </article>
 
-          <article class="faculty-card fade-in">
+          <article id="docente-stefano" class="faculty-card fade-in">
             <div class="faculty-photo">
               <img src="Stefano-Gazzola.jpg" alt="Stefano Barra Gazzola">
               <a href="https://www.linkedin.com/in/stefanogazzola/" target="_blank" rel="noopener" class="faculty-social-link" aria-label="LinkedIn de Stefano Gazzola">
