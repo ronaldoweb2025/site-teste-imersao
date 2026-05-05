@@ -171,6 +171,7 @@
       background: linear-gradient(135deg, rgba(201, 151, 58, 0.08), rgba(255, 255, 255, 0.02));
       aspect-ratio: 16 / 9; display: grid; place-items: center;
     }
+    .vsl-frame iframe { width: 100%; height: 100%; border: 0; }
     .vsl-placeholder { text-align: center; padding: 24px; }
     .vsl-placeholder strong {
       display: block; color: var(--gold-soft); font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase;
@@ -729,10 +730,13 @@
           <p>Estamos finalizando a apresentação oficial desta imersão.
 Em breve você poderá conhecer todos os detalhes diretamente com o professor.</p>
           <div class="vsl-frame">
-            <div class="vsl-placeholder">
-              <strong>Vídeo em breve</strong>
-              <span>https://www.youtube.com/watch?v=qw6dmvAyJUs</span>
-            </div>
+            <iframe
+              src="https://www.youtube.com/embed/qw6dmvAyJUs?rel=0&modestbranding=1"
+              title="Apresentação da Imersão"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
