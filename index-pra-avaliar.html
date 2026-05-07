@@ -506,7 +506,7 @@
       width: min(100%, 320px); justify-self: center; min-height: 52px; border-radius: 999px; border: 1px solid rgba(37, 211, 102, 0.55);
       background: linear-gradient(135deg, #179c4a, #22c55e); color: #08140d;
       font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: not-allowed;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;
       box-shadow: 0 14px 28px rgba(34, 197, 94, 0.22);
       transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     }
@@ -1247,14 +1247,14 @@
       <div class="container">
         <div class="whatsapp-support" aria-label="Suporte alternativo via WhatsApp">
           <p><strong>Prefere Não Preencher o Formulário?</strong>Esta seção ficará como um apoio discreto para contato rápido via WhatsApp.</p>
-          <button class="whatsapp-support-btn" type="button" disabled aria-disabled="true">
+          <a class="whatsapp-support-btn" href="https://wa.me/5511999999999?text=Suporte%20Imers%C3%A3o%20Executiva" target="_blank" rel="noopener" aria-label="Abrir suporte da Imersão Executiva no WhatsApp">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M20 11.5C20 16.1944 16.1944 20 11.5 20C10.0286 20 8.64459 19.6258 7.43858 18.9685L4 20L5.06032 16.6946C4.38032 15.5332 4 14.1828 4 12.75C4 8.05558 7.80558 4.25 12.5 4.25C17.1944 4.25 21 8.05558 21 12.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M9.39688 9.57324C9.59388 9.13452 9.80063 9.12549 10.0039 9.13393C10.1673 9.14065 10.3549 9.14124 10.5425 9.14124C10.73 9.14124 11.0347 9.07121 11.3159 9.37593C11.5972 9.68065 12.3916 10.4501 12.3916 10.7351C12.3916 11.0201 12.1697 11.1957 11.9778 11.3927C11.7859 11.5897 11.5781 11.8057 11.4938 11.9463C11.4094 12.0869 11.325 12.2449 11.4688 12.4944C11.6125 12.744 12.1084 13.5384 12.8281 14.1807C13.7544 15.0088 14.535 15.2664 14.7845 15.4102C15.0341 15.5539 15.1797 15.5301 15.3253 15.3864C15.4709 15.2426 15.9394 14.6952 16.1125 14.4499C16.2856 14.2046 16.4588 14.2459 16.6822 14.3299C16.9056 14.4139 18.0975 15.0001 18.3459 15.1249C18.5944 15.2497 18.7594 15.3116 18.8213 15.4171C18.8831 15.5227 18.8831 16.0202 18.635 16.5081C18.3869 16.9959 17.1691 17.4628 16.6478 17.4981C16.1266 17.5333 15.4672 17.6308 13.1884 16.7336C10.9097 15.8364 9.42031 13.3343 9.30406 13.1763C9.18781 13.0183 8.35719 11.9263 8.35719 10.8031C8.35719 9.67984 9.19988 9.00855 9.39688 9.57324Z" fill="currentColor"/>
             </svg>
             Suporte via WhatsApp
-          </button>
-          <small>Número em definição. A proposta aqui é atender quem preferir conversar antes de enviar os dados.</small>
+          </a>
+          <small>Atendimento rápido para quem preferir conversar antes de enviar os dados.</small>
         </div>
       </div>
     </section>
