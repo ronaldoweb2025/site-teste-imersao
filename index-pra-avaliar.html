@@ -571,6 +571,33 @@
     }
     .availability-box h3 { font-family: var(--font-display); font-size: 3rem; line-height: 0.95; margin-bottom: 12px; }
     .availability-box p { color: var(--muted); font-size: 1.18rem; max-width: 760px; }
+    .investment-reveal {
+      display: grid; gap: 10px; justify-items: start; margin-bottom: 16px;
+    }
+    .availability-box .investment-teaser {
+      margin-bottom: 0;
+      font-size: clamp(2.1rem, 2.8vw, 2.56rem);
+      color: var(--gold-soft);
+    }
+    .investment-trigger {
+      appearance: none; border: 0; border-bottom: 1px solid rgba(226, 185, 106, 0.48); padding: 0 0 4px;
+      background: transparent; color: var(--gold-soft); font: inherit; font-size: 0.84rem; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; cursor: pointer; transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .investment-trigger:hover {
+      color: var(--text); border-color: rgba(244, 239, 229, 0.62); transform: translateY(-1px);
+    }
+    .investment-details {
+      display: grid; gap: 8px; max-height: 0; opacity: 0; overflow: hidden;
+      transform: translateY(8px); transition: max-height 0.45s ease, opacity 0.32s ease, transform 0.32s ease;
+    }
+    .investment-reveal.is-revealed .investment-teaser,
+    .investment-reveal.is-revealed .investment-trigger {
+      display: none;
+    }
+    .investment-reveal.is-revealed .investment-details {
+      max-height: 160px; opacity: 1; transform: translateY(0);
+    }
     .availability-badge {
       display: inline-flex; align-items: center; justify-content: center; min-width: 210px; min-height: 84px; padding: 0 20px; border-radius: 999px;
       background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft)); color: #130e09; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
@@ -1265,8 +1292,14 @@
 
         <div class="availability-box fade-in">
           <div>
-            <h3>A partir de R$ 8.500,00</h3>
-            <small class="price-installments">Ou até 12x no cartão, consulte as condições*</small>
+            <div class="investment-reveal">
+              <h3 class="investment-teaser">Condição Exclusiva para esta Edição</h3>
+              <button class="investment-trigger" type="button" aria-controls="investment-details" aria-expanded="false">Ver Investimento</button>
+              <div class="investment-details" id="investment-details" aria-hidden="true">
+                <h3>A partir de R$ 8.500,00</h3>
+                <small class="price-installments">Ou até 12x no cartão, consulte as condições*</small>
+              </div>
+            </div>
             <p>Vagas Limitadas para Líderes Universitários que desejam transformar Conexões Institucionais em Parcerias, Projetos e Oportunidades reais para sua IES.</p>
           </div>
           <a class="availability-badge" href="#form-contato">Garantir minha vaga</a>
@@ -1333,6 +1366,19 @@
     document.querySelectorAll(".fade-in, .fade-in-left").forEach((element) => {
       observer.observe(element);
     });
+
+    const investmentReveal = document.querySelector(".investment-reveal");
+
+    if (investmentReveal) {
+      const investmentTrigger = investmentReveal.querySelector(".investment-trigger");
+      const investmentDetails = investmentReveal.querySelector(".investment-details");
+
+      investmentTrigger.addEventListener("click", () => {
+        investmentReveal.classList.add("is-revealed");
+        investmentTrigger.setAttribute("aria-expanded", "true");
+        investmentDetails.setAttribute("aria-hidden", "false");
+      }, { once: true });
+    }
 
     const moduleCards = document.querySelectorAll(".module-card");
 
